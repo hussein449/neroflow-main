@@ -24,6 +24,10 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="border-t border-border/50 bg-card/30">
       <div className="container-wide mx-auto section-padding">
@@ -66,6 +70,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
+                    onClick={scrollToTop}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
@@ -85,6 +90,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
+                    onClick={scrollToTop}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
@@ -121,20 +127,23 @@ export function Footer() {
               reserved.
             </p>
 
-            {/* <div className="flex items-center justify-center sm:justify-end gap-6 text-sm">
+            {/* Optional right side links. Add back if you want */}
+            <div className="hidden sm:flex items-center justify-end gap-6 text-sm">
               <Link
                 to="/privacy"
+                onClick={scrollToTop}
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 Privacy
               </Link>
               <Link
                 to="/terms"
+                onClick={scrollToTop}
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 Terms
               </Link>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
